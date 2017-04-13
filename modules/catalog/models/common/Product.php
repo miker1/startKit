@@ -25,6 +25,9 @@ use yii\helpers\ArrayHelper;
  */
 class Product extends ActiveRecord
 {
+	
+	private $_tagsArray;
+	
     /**
      * @inheritdoc
      */
@@ -112,9 +115,7 @@ class Product extends ActiveRecord
     {
         return new ProductQuery(get_called_class());
     }
-
-    private $_tagsArray;
-
+	
     public function getTagsArray()
     {
         if ($this->_tagsArray === null) {
